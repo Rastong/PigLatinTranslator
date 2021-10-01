@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Pig Latin Translator/1.0.0": {
+        "runtime": {
+          "Pig Latin Translator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pig Latin Translator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
