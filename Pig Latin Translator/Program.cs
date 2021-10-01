@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+
 namespace Pig_Latin_Translator
 {
     class Program
@@ -51,6 +53,20 @@ namespace Pig_Latin_Translator
                 }
             }
         }
+        public static bool CheckForNonAlpha(string input)
+        {
+            bool result = true;
+            if(Regex.IsMatch(input, "^[a-zA-Z]+$"))
+            { 
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+            return result;
+        }
+
         public static string SentenceArray(string input)
         {
             input = input.ToLower();
@@ -59,9 +75,18 @@ namespace Pig_Latin_Translator
             string sentence = "";
             foreach (string sub in ToBeTranslated)
             {
-                result = ConvertToPig(sub);
-                sentence += " ";
-                sentence += result;
+                bool AllLetters = CheckForNonAlpha(sub);
+                if (AllLetters)
+                {
+                    result = ConvertToPig(sub);
+                    sentence += " ";
+                    sentence += result;
+                }
+                else
+                {
+                    sentence += " ";
+                    sentence += sub;
+                }
             }
             return sentence.Trim() + ".";
         }
